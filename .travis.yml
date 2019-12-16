@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.5"
+
+# command to install dependencies
+install:
+  - pip install black
+
+stages:
+  - black
+  - test
+
+jobs:
+  include:
+    - stage: black
+      script: black --check .
+    - stage: test
+      script: ./run_tests.sh
