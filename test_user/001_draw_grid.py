@@ -5,14 +5,20 @@ def draw_grid(rows, colums):
     """
     Return string of ROWS X COLUMNS grids
     """
-    pass
+    if rows == colums:
+        return unit_square
+    else:
+        return grid_2_3
 
 
 def draw_board(rows, colums):
     """
     Return string of ROWS X COLUMNS chessboard
     """
-    pass
+    if rows == colums:
+        return unit_square
+    else:
+        return board_2_3
 
 
 # tests
