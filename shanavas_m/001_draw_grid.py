@@ -1,18 +1,37 @@
 #!/usr/bin/env python3
 
 
-def draw_grid(rows, colums):
+def draw_grid(rows, cols):
     """
     Return string of ROWS X COLUMNS grids
     """
-    pass
+    # horizontal line
+    hor = "+ - " * cols + "+\n"
+    # vertical line
+    ver = "|   " * cols + "|\n"
+
+    return (hor + ver) * rows + hor.rstrip()
 
 
-def draw_board(rows, colums):
+def draw_board(rows, cols):
     """
     Return string of ROWS X COLUMNS chessboard
     """
-    pass
+    board = ""
+
+    # horizontal line
+    hor = "+ - " * cols + "+\n"
+
+    # vertical line for even rows
+    vert_eve = "".join(["| B " if i % 2 else "|   " for i in range(cols)]) + "|\n"
+
+    # vertical line for odd rows
+    vert_odd = "".join(["|   " if i % 2 else "| B " for i in range(cols)]) + "|\n"
+
+    for i in range(rows):
+        board += hor + (vert_odd if i % 2 else vert_eve)
+
+    return board + hor.rstrip()
 
 
 # tests
