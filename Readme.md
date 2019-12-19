@@ -13,4 +13,4 @@
 
 
 ## Challenges
-- [Week 01](./week01.md)
+- [Week 01](./challenges/week01.md)
