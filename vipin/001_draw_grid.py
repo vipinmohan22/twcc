@@ -1,13 +1,12 @@
 def draw_grid(n, m):
     tmpstr = ""
     if m >= 1:
-        for j in range(0, n+1):
-            for i in range(0, m+1):
-                if i is not m:
+        for j in range(0, n + 1):
+            for i in range(0, m + 1):
+                if i != m:
                     tmpstr += "+ - "
                 else:
                     tmpstr += "+" + "\n"
-                if i == m:
                     if j < n:
                         for k in range(0, m + 1):
                             if k is not m:
@@ -15,7 +14,6 @@ def draw_grid(n, m):
                             else:
                                 tmpstr += "|" + "\n"
     return tmpstr
-
 
 
 unit_square = """\
@@ -44,24 +42,23 @@ def draw_board(n, m):
                 toggle = True
             else:
                 toggle = False
-            for i in range(0, m+1):
-                # import pdb; pdb.set_trace()
-                if i is not m:
-                    print("+ - ", end='')
+            for i in range(0, m + 1):
+                if i != m:
+                    print("+ - ", end="")
                     tmpstr += "+ - "
                 else:
                     print("+")
                     tmpstr += "+" + "\n"
-                if i == m:
+
                     if j < n:
                         for k in range(0, m + 1):
                             if k is not m:
                                 if toggle:
-                                    print("|   ", end='')
+                                    print("|   ", end="")
                                     tmpstr += "|   "
                                     toggle = False
                                 else:
-                                    print("| B ", end='')
+                                    print("| B ", end="")
                                     tmpstr += "| B "
                                     toggle = True
 
@@ -70,8 +67,6 @@ def draw_board(n, m):
                                 tmpstr += "|" + "\n"
     return tmpstr
 
-
-draw_board(n, m)
 
 board_2_3 = """\
 + - + - + - +
